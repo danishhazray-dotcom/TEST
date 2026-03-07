@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Untukmu!</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            background: #fff5f8;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 350px;
+            z-index: 10;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #ff4081;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        h1 { color: #d81b60; font-size: 1.8em; }
+        p { color: #555; line-height: 1.6; }
+        .btn {
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #e91e63; transform: scale(1.1); }
+        #confetti { display: none; font-size: 2.5em; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://ibb.co/CKK5RBhs" class="profile-img" alt="Birthday Pic">
+        
+        <h1>Happy Birthday! 🎂</h1>
+        <p>Semoga tahun ini membawa lebih banyak kejayaan, kesihatan yang baik, dan kegembiraan yang tak terhingga buatmu.</p>
+
+        <audio id="bgMusic">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+
+        <button class="btn" onclick="celebrate()">TEKAN UNTUK KEJUTAN ✨</button>
+        <div id="confetti">🎉🎈🎊✨</div>
+    </div>
+
+    <script>
+        function celebrate() {
+            var audio = document.getElementById("bgMusic");
+            audio.play();
+            document.getElementById("confetti").style.display = "block";
+            document.querySelector(".btn").style.display = "none";
+            document.body.style.backgroundColor = "#ffebee";
+        }
+    </script>
+</body>
+</html>
